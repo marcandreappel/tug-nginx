@@ -16,8 +16,8 @@ RUN apk update && apk add supervisor \
 	&& ln -sf /dev/stdout /var/log/nginx/access.log \
 	&& ln -sf /dev/stderr /var/log/nginx/error.log
 
-COPY h5bp /etc/nginx/h5bp
-COPY default /etc/nginx/sites-available/default
-COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
+COPY files/h5bp /etc/nginx/h5bp
+COPY files/default /etc/nginx/sites-available/default
+COPY files/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
 CMD ["/usr/bin/supervisord", "-c", "/etc/supervisor/conf.d/supervisord.conf"]

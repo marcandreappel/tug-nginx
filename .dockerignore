@@ -1,9 +1,6 @@
 hooks
-h5bp
 .git
 .idea
 
 .gitignore
 *.md
-default
-supervisord.conf
